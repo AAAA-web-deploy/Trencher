@@ -609,11 +609,12 @@ h6 {
 }
 .hero__title img {
   width: 100%;
-  filter:
-    drop-shadow(4px 0 0 #000) drop-shadow(-4px 0 0 #000)
-    drop-shadow(0 4px 0 #000) drop-shadow(0 -4px 0 #000)
-    drop-shadow(3px 3px 0 #000) drop-shadow(-3px 3px 0 #000)
-    drop-shadow(3px -3px 0 #000) drop-shadow(-3px -3px 0 #000);
+  height: auto;
+  display: block;
+  filter: none;
+  image-rendering: auto;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 .hero__right {
   position: relative;
