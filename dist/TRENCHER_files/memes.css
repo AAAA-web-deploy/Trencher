@@ -1,0 +1,175 @@
+.memes {
+	position: relative;
+	z-index: 3;
+	background:
+		radial-gradient(ellipse at 50% 0%, rgba(92, 107, 58, 0.22), transparent 58%),
+		#0c1931;
+	padding: 4.25rem 0 6.5rem;
+}
+
+.memes__container {
+	width: min(100% - 2rem, 74.375rem);
+	margin-inline: auto;
+}
+
+.memes__head {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 2.75rem;
+	text-align: center;
+}
+
+.memes__title {
+	position: relative;
+	font-family: Revue, "Barbieri-Regular", Impact, sans-serif;
+	font-weight: 500;
+	font-size: clamp(3.2rem, 7vw, 5.75rem);
+	line-height: 0.85;
+	text-transform: uppercase;
+	color: #111;
+	background: #efe8d2;
+	border: 0.125rem solid #000;
+	box-shadow: 0.18rem 0.28rem 0 #000;
+	padding: 0.7rem 1.25rem 0.55rem;
+	transform: rotate(-1.7deg);
+}
+
+.memes__title::before {
+	content: "";
+	position: absolute;
+	top: -0.62rem;
+	left: 50%;
+	width: 4.6rem;
+	height: 1.15rem;
+	display: block;
+	background: #345dba;
+	border: 0.1rem solid #000;
+	transform: translateX(-50%) rotate(2.4deg);
+}
+
+.memes__lead {
+	margin-top: 1.35rem;
+	color: #efe8d2;
+	font-family: "GoodDog New", "Berlin Sans FB Demi", sans-serif;
+	font-size: clamp(1.45rem, 2.2vw, 2rem);
+	transform: rotate(1deg);
+}
+
+.memes__wall {
+	columns: 4 13.5rem;
+	column-gap: 1.35rem;
+}
+
+.memes__card {
+	display: block;
+	width: 100%;
+	break-inside: avoid;
+	-webkit-column-break-inside: avoid;
+	page-break-inside: avoid;
+	margin: 0 0 1.35rem;
+	padding: 0.5rem 0.5rem 0.7rem;
+	background: #efe8d2;
+	border: 0.125rem solid #000;
+	box-shadow: 0.18rem 0.28rem 0 #000;
+	cursor: pointer;
+	transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.memes__card img {
+	display: block;
+	width: 100%;
+	height: auto;
+	border: 0.1rem solid #000;
+	pointer-events: none;
+}
+
+.memes__card:nth-child(6n + 1) { transform: rotate(-1.8deg); }
+.memes__card:nth-child(6n + 2) { transform: rotate(1.3deg); }
+.memes__card:nth-child(6n + 3) { transform: rotate(-0.7deg); }
+.memes__card:nth-child(6n + 4) { transform: rotate(1.9deg); }
+.memes__card:nth-child(6n + 5) { transform: rotate(-1.4deg); }
+.memes__card:nth-child(6n + 6) { transform: rotate(0.8deg); }
+
+.memes__card:hover,
+.memes__card:focus-visible {
+	position: relative;
+	z-index: 2;
+	transform: rotate(0deg) translateY(-0.35rem);
+	box-shadow: 0.32rem 0.42rem 0 #000;
+	outline: none;
+}
+
+.memes-lightbox {
+	position: fixed;
+	inset: 0;
+	z-index: 90;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 4.5rem 1.25rem 2rem;
+	background: rgba(8, 12, 10, 0.9);
+}
+
+.memes-lightbox[hidden] {
+	display: none;
+}
+
+.memes-lightbox img {
+	max-width: min(92vw, 52rem);
+	max-height: 84vh;
+	width: auto;
+	height: auto;
+	background: #efe8d2;
+	border: 0.15rem solid #000;
+	box-shadow: 0.35rem 0.45rem 0 #000;
+}
+
+.memes-lightbox__close {
+	position: absolute;
+	top: 6.4rem;
+	right: 1.15rem;
+	width: 3.1rem;
+	height: 3.1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 0.125rem solid #000;
+	background: #345dba;
+	box-shadow: 0.12rem 0.18rem 0 #000;
+	color: #fff;
+	cursor: pointer;
+}
+
+.memes-lightbox__close svg {
+	display: block;
+	width: 1.45rem;
+	height: 1.45rem;
+}
+
+.memes-lightbox__close:hover,
+.memes-lightbox__close:focus-visible {
+	background: #1e3e8b;
+	outline: none;
+}
+
+@media (max-width: 61.99875em) {
+	.memes {
+		padding: 3.25rem 0 5rem;
+	}
+
+	.memes__wall {
+		columns: 2 10rem;
+	}
+}
+
+@media (max-width: 29.99875em) {
+	.memes__wall {
+		columns: 1;
+	}
+
+	.memes__card,
+	.memes__card:nth-child(n) {
+		transform: none;
+	}
+}

@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+
+<html lang="en" class="watcher loaded"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>TRENCHER</title>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="description" content="Born in chaos, raised on the battlefield, and hardened by every rug, every crash, and every red candle. Once a Trencher, always a Trencher. $TRENCHER on Ethereum.">
+	<meta name="keywords" content="TRENCHER, $TRENCHER, Ethereum, meme coin, Doge, trench">
+	<meta name="author" content="TRENCHER">
+	<meta name="robots" content="index, follow">
+	<meta name="theme-color" content="#345dba">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="TRENCHER">
+	<meta property="og:title" content="TRENCHER">
+	<meta property="og:description" content="Born in chaos, raised on the battlefield, and hardened by every rug, every crash, and every red candle. Once a Trencher, always a Trencher. $TRENCHER on Ethereum.">
+	<meta property="og:image" content="img/HeroBg.webp">
+	<meta property="og:image:alt" content="TRENCHER">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@trencher">
+	<meta name="twitter:creator" content="@trencher">
+	<meta name="twitter:title" content="TRENCHER">
+	<meta name="twitter:description" content="Born in chaos, raised on the battlefield, and hardened by every rug, every crash, and every red candle. Once a Trencher, always a Trencher. $TRENCHER on Ethereum.">
+	<meta name="twitter:image" content="img/HeroBg.webp">
+	<style>
+		body {
+			opacity: 0;
+			visibility: hidden;
+			transition:
+				opacity 0.2s ease 0.2s,
+				visibility 0.2s ease 0.2s;
+		}
+
+		.loaded body {
+			opacity: 1;
+			visibility: visible;
+		}
+
+		@keyframes start {
+			0% {
+				scale: 1;
+			}
+
+			15% {
+				scale: 1.6;
+			}
+
+			35% {
+				scale: 1;
+			}
+
+			99% {
+				scale: 25;
+			}
+
+			100% {
+				scale: 25;
+				display: none;
+			}
+		}
+
+		.start {
+			pointer-events: none;
+			position: fixed;
+			z-index: 100;
+			top: -10vh;
+			left: -10vw;
+			width: 120vw;
+			height: 120vh;
+			will-change: scale;
+			background: radial-gradient(circle,
+					rgba(196, 165, 116, 0) 0%,
+					rgba(196, 165, 116, 0) 8%,
+					rgba(196, 165, 116, 1) 9%,
+					rgba(196, 165, 116, 1) 100%);
+		}
+
+		.loaded .start {
+			animation: start 2s ease-out 0.4s forwards;
+		}
+	</style>
+	<link rel="stylesheet" href="./TRENCHER_files/style.min.css">
+	<link rel="stylesheet" href="./TRENCHER_files/theme.css">
+	<link rel="stylesheet" href="./TRENCHER_files/memes.css">
+	<style>
+		.header {
+			z-index: 50;
+			padding-top: 0;
+		}
+		.header__container {
+			padding-top: 1.875rem;
+			gap: 1.25rem;
+			align-items: center;
+		}
+		.header__menu {
+			margin-left: auto;
+		}
+		.header__logo {
+			display: flex;
+			align-items: center;
+			gap: 0.625rem;
+			width: auto;
+			aspect-ratio: auto;
+			text-decoration: none;
+			position: relative;
+			z-index: 5;
+			flex-shrink: 0;
+		}
+		.header__logo img {
+			width: auto;
+			height: clamp(3.25rem, 2.7rem + 2.5vw, 5rem);
+			border-radius: 0;
+			object-fit: contain;
+		}
+		.header__logo img:first-child {
+			height: clamp(3.5rem, 3rem + 2.8vw, 5.5rem);
+			border-radius: 0.65rem;
+			object-fit: cover;
+		}
+		.header__logo img:last-child {
+			height: clamp(2.25rem, 1.7rem + 2.4vw, 3.75rem);
+		}
+		.menu__list {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			column-gap: 0;
+			gap: 0.03125rem;
+			padding: 0.75rem 0.4375rem;
+			border: 0.125rem solid #000;
+			background: #efe8d2;
+			box-shadow: 0.0625rem 0.1875rem 0 0 #000;
+		}
+		.menu__link {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0.625rem 2.5rem;
+			border-radius: 0;
+			border: 0.125rem solid #000;
+			background: #acc4f4;
+			box-shadow: 0.0625rem 0.1875rem 0 0 #000;
+			color: #000;
+			font-family: "GoodDog New", "Berlin Sans FB Demi", sans-serif;
+			font-size: 1.75rem;
+			font-weight: 400;
+			line-height: 130%;
+			text-transform: uppercase;
+			transition: color 0.2s, transform 0.2s;
+		}
+		.menu__item:nth-child(odd) .menu__link {
+			transform: rotate(1.96deg);
+		}
+		.menu__item:nth-child(even) .menu__link {
+			transform: rotate(-2.3deg);
+		}
+		.menu__link._navigator-active {
+			background-color: #83a4e5;
+			transform: none;
+			box-shadow: 0.0625rem 0.1875rem 0 0 #000;
+		}
+		.menu__link--buy {
+			background-color: #345dba !important;
+			color: #fff !important;
+		}
+		@media (any-hover: hover) {
+			.menu__item:hover .menu__link {
+				transform: rotate(0);
+				color: #1e3e8b;
+			}
+			.menu__item:hover .menu__link--buy {
+				transform: rotate(0);
+				color: #fff !important;
+				background-color: #1e3e8b !important;
+			}
+		}
+		.hero__cta {
+			position: absolute;
+			z-index: 3;
+			top: 81%;
+			right: 27%;
+			display: flex;
+			align-items: center;
+			gap: 0.75rem;
+			width: max-content;
+		}
+		.page__hero .hero__social {
+			position: static;
+			top: auto;
+			right: auto;
+			left: auto;
+			transform: none;
+			-webkit-transform: none;
+		}
+		.hero__buy {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-width: 0;
+			min-height: 0;
+			padding: 0.75rem 2.25rem;
+			border: 0.125rem solid #000;
+			border-radius: 0;
+			background: #345dba;
+			box-shadow: 0.0625rem 0.1875rem 0 0 #000;
+			color: #fff;
+			font-family: "GoodDog New", "Berlin Sans FB Demi", sans-serif;
+			font-size: clamp(1.35rem, 1.1rem + 1.2vw, 1.75rem);
+			line-height: 130%;
+			text-transform: uppercase;
+			text-decoration: none;
+			white-space: nowrap;
+			transition: color 0.2s, background-color 0.2s, transform 0.2s;
+		}
+		@media (any-hover: hover) {
+			.hero__buy:hover {
+				background: #1e3e8b;
+				color: #fff;
+				transform: rotate(0);
+			}
+		}
+		.hero__ca {
+			height: 5.125rem;
+			padding: 0 0.9em;
+			font-size: 1.05rem;
+			display: inline-flex;
+			align-items: center;
+			gap: 0.4em;
+			border: 0.125rem solid #000;
+			border-radius: 0;
+			background: #efe8d2;
+			box-shadow: 0.0625rem 0.1875rem 0 0 #000;
+			color: #000;
+			font-family: "GoodDog New", "Berlin Sans FB Demi", sans-serif;
+			cursor: pointer;
+			white-space: nowrap;
+			transform: rotate(5.4deg);
+		}
+		.hero__ca strong { color: #000; }
+		.hero__ca svg { width: 0.95em; height: 0.95em; flex-shrink: 0; fill: #000; }
+		.hero__ca .ca-copy__copied { display: none; }
+		.hero__ca.is-copied .ca-copy__addr,
+		.hero__ca.is-copied strong { display: none; }
+		.hero__ca.is-copied .ca-copy__copied { display: inline; color: #000; }
+		.about__decor img {
+			opacity: 0;
+			visibility: hidden;
+		}
+		.about__content-wrapper._watcher-view .about__decor img {
+			animation: about-decor-in 0.35s 0.35s forwards;
+		}
+		@keyframes about-decor-in {
+			0% { opacity: 0; visibility: hidden; transform: translate(80%, -76%); }
+			20% { opacity: 1; visibility: visible; }
+			80% { opacity: 1; visibility: visible; transform: translate(-8%, -76%); }
+			100% { opacity: 1; visibility: visible; transform: translate(0, -76%); }
+		}
+		.line__item::before {
+			background-image: url("img/mainlogo-nobg.webp");
+		}
+		.about__button,
+		.join__button {
+			position: relative;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-width: 0;
+			min-height: 0;
+			width: auto;
+			padding: 0.75rem 2.5rem;
+			border: 0.125rem solid #000;
+			border-radius: 0;
+			background: #345dba !important;
+			box-shadow: 0.0625rem 0.1875rem 0 0 #000;
+			color: #fff !important;
+			font-family: "GoodDog New", "Berlin Sans FB Demi", sans-serif;
+			font-size: clamp(1.5rem, 1.2rem + 1.4vw, 1.75rem);
+			line-height: 130%;
+			text-transform: uppercase;
+			text-decoration: none;
+			white-space: nowrap;
+			transition: color 0.2s, background-color 0.2s, transform 0.2s;
+		}
+		.about__button {
+			transform: rotate(-3.946deg);
+		}
+		.join__button {
+			--button-transform: rotate(-3deg);
+			transform: var(--button-transform);
+			top: auto;
+			left: 9%;
+			bottom: 8%;
+		}
+		@media (any-hover: hover) {
+			.about__button:hover,
+			.join__button:hover {
+				background: #1e3e8b !important;
+				color: #fff !important;
+			}
+			.about__button:hover {
+				transform: rotate(0);
+			}
+			.join__button:hover {
+				transform: rotate(0);
+			}
+		}
+		.about__img-box > img {
+			outline: 3px solid #000;
+		}
+		.about__title img {
+			width: 24%;
+			object-fit: contain;
+		}
+		.about__small-img {
+			align-self: flex-end;
+			width: 70%;
+			aspect-ratio: auto;
+			overflow: visible;
+			right: 5%;
+			margin-top: -5.625rem;
+		}
+		.about__small-img img {
+			position: relative;
+			width: 100%;
+			height: auto;
+			object-fit: contain;
+		}
+		.how__body {
+			background:
+				radial-gradient(circle at 18% 14%, rgba(81, 154, 255, 0.68), transparent 28%),
+				radial-gradient(circle at 88% 76%, rgba(36, 105, 255, 0.35), transparent 32%),
+				#c4a574;
+			overflow: hidden;
+		}
+		.how__top,
+		.how__bottom {
+			display: none;
+		}
+		.how__body > img {
+			display: none;
+		}
+		.how__container {
+			position: relative;
+			z-index: 1;
+		}
+		.how__title {
+			max-width: min(68rem, 94vw);
+			transform: rotate(-2deg);
+		}
+		.how__title::before {
+			display: none;
+		}
+		.how__items {
+			display: grid;
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+			gap: clamp(1rem, 0.7168rem + 1.4159vw, 2rem);
+			max-width: 78rem;
+			margin-top: clamp(-3.5rem, -1.3761rem + -2.3431vw, -2rem);
+			background: none;
+			aspect-ratio: auto;
+		}
+		.how__item,
+		.how__item.reverse {
+			position: relative;
+			top: auto;
+			left: auto;
+			right: auto;
+			width: auto;
+			min-height: 100%;
+			padding: clamp(1rem, 0.8584rem + 0.708vw, 1.5rem);
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 0.75rem;
+			border: 0.1875rem solid #000;
+			border-radius: 0.75rem;
+			box-sizing: border-box;
+			background:
+				linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(109, 171, 255, 0.86)),
+				#5eaaff;
+			box-shadow: -0.375rem 0.375rem 0 0 #000;
+			transform: rotate(var(--step-rotate, 0deg));
+		}
+		.how__item:nth-child(1) {
+			--step-rotate: -1.8deg;
+		}
+		.how__item:nth-child(2) {
+			--step-rotate: 1.1deg;
+		}
+		.how__item:nth-child(3) {
+			--step-rotate: -0.9deg;
+		}
+		.how__item:nth-child(4) {
+			--step-rotate: 1.7deg;
+		}
+		.page__how .how__item:nth-child(1),
+		.page__how .how__item:nth-child(2),
+		.page__how .how__item:nth-child(3),
+		.page__how .how__item:nth-child(4) {
+			top: auto;
+			left: auto;
+			right: auto;
+			width: auto;
+			transform: rotate(var(--step-rotate, 0deg));
+		}
+		.how__item img {
+			width: min(13rem, 88%);
+			aspect-ratio: 1;
+			object-fit: contain;
+			filter: drop-shadow(0 0 0.5rem rgba(84, 166, 255, 0.55));
+		}
+		.how__item h4 {
+			white-space: normal;
+			text-align: center;
+			color: #c4a574;
+			-webkit-text-stroke: 0.075em #000;
+			paint-order: stroke fill;
+			text-shadow: 0.06em 0.06em 0 #000;
+			line-height: 0.95;
+		}
+		.how__item p {
+			max-width: 14.5rem;
+			text-align: center;
+			font-family: "GoodDog New", "Berlin Sans FB Demi", sans-serif;
+			font-size: clamp(1rem, 0.8938rem + 0.531vw, 1.375rem);
+			line-height: 1.12;
+		}
+		.how__item strong {
+			color: #111;
+			background: #c4a574;
+			padding: 0 0.125em;
+		}
+		.tokenomics {
+			padding-top: clamp(8.5rem, 6.7301rem + 8.8496vw, 14.75rem);
+			padding-bottom: clamp(4.5rem, 3.4381rem + 5.3097vw, 8.25rem);
+			scroll-margin-top: 6rem;
+			background:
+				radial-gradient(circle at 18% 22%, rgba(196, 165, 116, 0.22), transparent 30%),
+				radial-gradient(circle at 80% 72%, rgba(196, 165, 116, 0.18), transparent 34%),
+				#101d37;
+			overflow: hidden;
+		}
+		.tokenomics::before {
+			background:
+				linear-gradient(rgba(196, 165, 116, 0.08) 0.0625rem, transparent 0.0625rem),
+				linear-gradient(90deg, rgba(196, 165, 116, 0.08) 0.0625rem, transparent 0.0625rem);
+			background-size: 3rem 3rem;
+			opacity: 0.9;
+			top: 0;
+			height: 100%;
+		}
+		.tokenomics__container {
+			align-items: center;
+			flex-wrap: wrap;
+			gap: clamp(1.5rem, 0.792rem + 3.5398vw, 4rem);
+		}
+		.tokenomics__container._watcher-view .tokenomics__item:nth-child(1),
+		.tokenomics__container._watcher-view .tokenomics__item:nth-child(2),
+		.tokenomics__container._watcher-view .tokenomics__item:nth-child(3),
+		.tokenomics__container._watcher-view .tokenomics__ca {
+			-webkit-animation: none;
+			animation: none;
+		}
+		.tokenomics__content {
+			order: 2;
+			flex: 0 1 40rem;
+			display: flex;
+			flex-direction: column;
+			gap: clamp(1rem, 0.7168rem + 1.4159vw, 2rem);
+			transform: none;
+		}
+		.tokenomics__title {
+			order: 1;
+			flex: 0 1 min(42rem, 92vw) !important;
+			width: min(42rem, 92vw) !important;
+			height: auto !important;
+			min-height: 0 !important;
+			aspect-ratio: auto !important;
+			line-height: 0 !important;
+			margin-inline: auto;
+			transform: rotate(-2deg);
+		}
+		.tokenomics__title img {
+			width: 100%;
+			height: auto;
+			aspect-ratio: auto;
+			display: block;
+		}
+		.tokenomics__items {
+			gap: clamp(1.75rem, 1.396rem + 1.7699vw, 3rem);
+		}
+		.tokenomics__item {
+			display: grid;
+			grid-template-columns: clamp(4.75rem, 4.1836rem + 2.8319vw, 6.75rem) 1fr;
+			align-items: center;
+			gap: clamp(0.75rem, 0.6084rem + 0.708vw, 1.25rem);
+			width: 100%;
+			max-width: none;
+			margin-top: 0;
+			min-height: clamp(10.5rem, 9.9336rem + 2.8319vw, 12.5rem);
+			padding: clamp(1.125rem, 0.9126rem + 1.0619vw, 1.875rem);
+			border: 0.1875rem solid #000;
+			border-radius: 0.875rem;
+			background:
+				linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(105, 172, 255, 0.9)),
+				#69b3ff;
+			box-shadow: -0.375rem 0.375rem 0 0 #000;
+			transform: rotate(var(--token-rotate, 0deg));
+		}
+		.tokenomics__item:nth-child(1) {
+			--token-rotate: 0.45deg;
+			width: 100%;
+			transform: rotate(var(--token-rotate, 0deg));
+		}
+		.tokenomics__item:nth-child(2) {
+			--token-rotate: -0.45deg;
+			width: 100%;
+			margin-top: 0;
+			transform: rotate(var(--token-rotate, 0deg));
+		}
+		.tokenomics__item:nth-child(3) {
+			--token-rotate: 0.45deg;
+			width: 100%;
+			transform: rotate(var(--token-rotate, 0deg));
+		}
+		.tokenomics__container._watcher-view .tokenomics__item:nth-child(1),
+		.tokenomics__container._watcher-view .tokenomics__item:nth-child(2),
+		.tokenomics__container._watcher-view .tokenomics__item:nth-child(3) {
+			transform: rotate(var(--token-rotate, 0deg));
+		}
+		.tokenomics__item img {
+			width: 100%;
+			aspect-ratio: 1;
+			object-fit: contain;
+			filter: drop-shadow(0 0 0.5rem rgba(196, 165, 116, 0.65));
+		}
+		.tokenomics__item h3 {
+			color: #c4a574;
+			font-family: "Barbieri-Regular", Impact, sans-serif;
+			font-size: clamp(1.5rem, 1.2522rem + 1.2389vw, 2.375rem);
+			line-height: 0.92;
+			text-transform: uppercase;
+			-webkit-text-stroke: 0.075em #000;
+			paint-order: stroke fill;
+			text-shadow: 0.055em 0.055em 0 #000;
+		}
+		.tokenomics__item strong {
+			display: block;
+			margin-top: 0.125rem;
+			color: #111;
+			font-family: "GoodDog New", "Berlin Sans FB Demi", sans-serif;
+			font-size: clamp(1.375rem, 1.1626rem + 1.0619vw, 2.125rem);
+			line-height: 1;
+			text-transform: uppercase;
+		}
+		.tokenomics__item p {
+			margin-top: 0.375rem;
+			color: #111;
+			font-family: "GoodDog New", "Berlin Sans FB Demi", sans-serif;
+			font-size: clamp(1rem, 0.9292rem + 0.354vw, 1.25rem);
+			line-height: 1.08;
+			text-transform: uppercase;
+		}
+		.tokenomics__ca {
+			width: 100%;
+			max-width: none;
+			aspect-ratio: auto;
+			padding: clamp(0.875rem, 0.7334rem + 0.708vw, 1.375rem);
+			border: 0.1875rem solid #000;
+			border-radius: 0.875rem;
+			background: #c4a574;
+			box-shadow: -0.375rem 0.375rem 0 0 #000;
+			transform: rotate(-1.2deg);
+		}
+		.tokenomics__container._watcher-view .tokenomics__ca {
+			transform: rotate(-1.2deg);
+		}
+		.tokenomics__ca span:nth-child(1),
+		.tokenomics__ca span:nth-child(2),
+		.tokenomics__ca button {
+			transform: none;
+		}
+		.tokenomics__ca span:nth-child(1),
+		.tokenomics__ca span:nth-child(2) {
+			color: #000;
+			font-family: "GoodDog New", "Berlin Sans FB Demi", sans-serif;
+			text-transform: uppercase;
+			word-break: break-all;
+		}
+		.tokenomics__ca span:nth-child(1) {
+			font-size: clamp(1.375rem, 1.1626rem + 1.0619vw, 2.125rem);
+		}
+		.tokenomics__ca span:nth-child(2) {
+			font-size: clamp(1rem, 0.9292rem + 0.354vw, 1.25rem);
+		}
+		.tokenomics__ca button svg path {
+			fill: #000;
+		}
+		.tokenomics__image {
+			order: 3;
+			flex: 0 1 34rem;
+			height: auto;
+			min-height: 0;
+			aspect-ratio: auto;
+			transform: none;
+		}
+		.tokenomics__image img {
+			filter: drop-shadow(0 0 1.5rem rgba(196, 165, 116, 0.42));
+		}
+		.tokenomics__image span {
+			background-color: #c4a574;
+		}
+		.join,
+		.footer,
+		.footer__top {
+			margin-top: 0 !important;
+			background:
+				radial-gradient(circle at 50% 32%, rgba(196, 165, 116, 0.28), transparent 25rem),
+				radial-gradient(circle at 12% 78%, rgba(196, 165, 116, 0.13), transparent 18rem),
+				radial-gradient(circle at 88% 76%, rgba(196, 165, 116, 0.12), transparent 19rem),
+				linear-gradient(rgba(196, 165, 116, 0.08) 0.0625rem, transparent 0.0625rem),
+				linear-gradient(90deg, rgba(196, 165, 116, 0.08) 0.0625rem, transparent 0.0625rem),
+				linear-gradient(180deg, #0c1931 0%, #050b19 100%) !important;
+			background-size:
+				auto,
+				auto,
+				auto,
+				3rem 3rem,
+				3rem 3rem,
+				auto;
+			background-position:
+				center top,
+				center top,
+				center top,
+				center top,
+				center top,
+				center top;
+			background-attachment: scroll;
+		}
+		.join {
+			padding-top: clamp(4.5rem, 3.4381rem + 5.3097vw, 8.25rem);
+			padding-bottom: clamp(1.75rem, 1.219rem + 2.6549vw, 3.625rem);
+			background: none !important;
+			overflow: visible;
+		}
+		.join::before,
+		.join::after,
+		.footer__top::before,
+		.footer__top::after {
+			content: "";
+			pointer-events: none;
+			position: absolute;
+			inset: 0;
+		}
+		.join::before,
+		.footer__top::before {
+			z-index: 0;
+			bottom: -46rem;
+			background:
+				linear-gradient(115deg, transparent 0 32%, rgba(196, 165, 116, 0.18) 32.2% 32.7%, transparent 33%),
+				linear-gradient(65deg, transparent 0 62%, rgba(196, 165, 116, 0.14) 62.2% 62.7%, transparent 63%),
+				repeating-linear-gradient(180deg, rgba(255, 255, 255, 0.035) 0 0.0625rem, transparent 0.0625rem 0.5rem),
+				radial-gradient(circle at 50% 32%, rgba(196, 165, 116, 0.28), transparent 25rem),
+				radial-gradient(circle at 12% 78%, rgba(196, 165, 116, 0.13), transparent 18rem),
+				radial-gradient(circle at 88% 76%, rgba(196, 165, 116, 0.12), transparent 19rem),
+				linear-gradient(rgba(196, 165, 116, 0.08) 0.0625rem, transparent 0.0625rem),
+				linear-gradient(90deg, rgba(196, 165, 116, 0.08) 0.0625rem, transparent 0.0625rem),
+				linear-gradient(180deg, #0c1931 0%, #050b19 100%);
+			background-size:
+				auto,
+				auto,
+				auto,
+				auto,
+				auto,
+				auto,
+				3rem 3rem,
+				3rem 3rem,
+				auto;
+			background-position: center top;
+		}
+		.join::after,
+		.footer__top::before,
+		.footer__top::after {
+			display: none;
+		}
+		.join__container {
+			position: relative;
+			z-index: 2;
+		}
+		.join__body {
+			width: min(66rem, 94vw) !important;
+			aspect-ratio: 1536 / 1024;
+			margin: 0 auto !important;
+			filter: drop-shadow(0 0 1.5rem rgba(196, 165, 116, 0.35));
+		}
+		.join__body > img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+		.join__social {
+			top: auto;
+			left: auto;
+			right: 12%;
+			bottom: 12%;
+			column-gap: clamp(0.625rem, 0.5188rem + 0.531vw, 1rem);
+		}
+		.hero__social-item,
+		.join__social-item,
+		.footer__top-item-social {
+			background:
+				linear-gradient(180deg, #162745, #080e1a) padding-box,
+				#c4a574;
+			border-color: #000;
+			box-shadow:
+				-0.25rem 0.25rem 0 0 #000,
+				0 0 0.875rem rgba(196, 165, 116, 0.32);
+		}
+		.hero__social-item:nth-child(1),
+		.hero__social-item:nth-child(2),
+		.join__social-item:nth-child(1),
+		.join__social-item:nth-child(2),
+		.footer__top-item-social:nth-child(4),
+		.footer__top-item-social:nth-child(5) {
+			background-color: #101d37;
+		}
+		.hero__social-item svg path,
+		.join__social-item svg path,
+		.footer__top-item-social svg path {
+			fill: #c4a574;
+		}
+		.footer {
+			margin-top: 0 !important;
+			background: transparent !important;
+		}
+		.footer__top {
+			margin-top: -0.0625rem !important;
+			padding-top: clamp(1rem, 0.5752rem + 2.1239vw, 2.5rem);
+			background: transparent !important;
+			border-top: 0;
+			overflow: hidden;
+		}
+		.footer__top-body {
+			position: relative;
+			z-index: 2;
+			gap: clamp(1.25rem, 0.6836rem + 2.8319vw, 3.25rem);
+			margin-top: 0 !important;
+		}
+		.footer__top-items {
+			position: relative;
+			z-index: 2;
+		}
+		.footer__top-item-menu {
+			background:
+				linear-gradient(180deg, #e8dcc4, #c4a574) !important;
+			box-shadow:
+				0.3125rem -0.3125rem 0.625rem 0 rgba(19, 48, 110, 0.32) inset,
+				-0.25rem 0.25rem 0 0 #000,
+				0 0 0.875rem rgba(196, 165, 116, 0.28);
+			color: #000;
+		}
+		.footer__top-image {
+			filter: drop-shadow(0 0 1.25rem rgba(196, 165, 116, 0.42));
+		}
+		.footer__bottom {
+			border-top: 0;
+			background: transparent !important;
+			color: #c4a574;
+		}
+		.footer__bottom-body > span,
+		.footer__bottom-body a span {
+			color: #c4a574;
+			text-shadow: 0.06em 0.06em 0 #000;
+		}
+		@media (any-hover: hover) {
+			.hero__social-item:hover,
+			.join__social-item:hover,
+			.footer__top-item-social:hover {
+				transform: translate(-0.25rem, 0.25rem) rotate(0deg);
+				box-shadow:
+					0 0 0 0 #000,
+					0 0 1.25rem rgba(196, 165, 116, 0.58);
+			}
+			.footer__top-item-menu:hover {
+				background:
+					linear-gradient(180deg, #ffffff, #c4a574) !important;
+				transform: translate(-0.25rem, 0.25rem);
+				box-shadow:
+					0.3125rem -0.3125rem 0.625rem 0 rgba(19, 48, 110, 0.32) inset,
+					0 0 0 0 #000,
+					0 0 1.25rem rgba(196, 165, 116, 0.5);
+			}
+		}
+		@media (min-width: 61.99875em) {
+			.page__hero .hero__cta {
+				left: auto;
+				top: 81%;
+				right: 27%;
+				width: max-content;
+			}
+			.tokenomics__items {
+				row-gap: 2.25rem;
+			}
+			.tokenomics__item + .tokenomics__item {
+				margin-top: 0.25rem;
+			}
+		}
+		@media (max-width: 61.99875em) {
+			.header__container {
+				padding-top: 0.625rem;
+			}
+			.header__logo {
+				gap: 0.375rem;
+			}
+			.header__logo img {
+				height: clamp(2.5rem, 1.9rem + 2.8vw, 3.5rem);
+			}
+			.header__logo img:first-child {
+				height: clamp(2.75rem, 2.1rem + 3vw, 3.75rem);
+			}
+			.header__logo img:last-child {
+				height: clamp(1.7rem, 1.3rem + 1.8vw, 2.4rem);
+			}
+			.menu-open-bg {
+				background: rgba(0, 0, 0, 0.3);
+				backdrop-filter: blur(0.375rem);
+			}
+			.menu__body {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				background: #efe8d2 !important;
+				border-bottom: 0.125rem solid #000;
+				box-shadow: 0.1875rem 0.1875rem 0 0 #000;
+			}
+			.menu__list {
+				align-items: stretch;
+				width: 100%;
+				flex-direction: column;
+				gap: 1.25rem;
+				padding: 0;
+				border: 0;
+				background: transparent;
+				box-shadow: none;
+			}
+			.menu__link {
+				width: 100%;
+				font-size: 1.5rem;
+				padding: 0.625rem 1.875rem;
+				background: #acc4f4;
+				box-shadow: 0.0625rem 0.1875rem 0 0 #000;
+			}
+			.icon-menu {
+				display: block;
+				width: 3.125rem;
+				height: 3.125rem;
+				border: 0.125rem solid #000;
+				border-radius: 0;
+				background: #acc4f4 !important;
+				box-shadow: 0.0625rem 0.1875rem 0 0 #000;
+				transform: rotate(-4deg);
+			}
+			.icon-menu span,
+			.icon-menu::before,
+			.icon-menu::after {
+				background-color: #000;
+			}
+			.menu__link--buy {
+				background: #345dba !important;
+				color: #fff !important;
+			}
+			.how__items {
+				grid-template-columns: 1fr;
+				width: calc(100% - 2rem);
+				margin-top: -1.75rem;
+			}
+			.how__item,
+			.how__item.reverse {
+				width: auto;
+				min-height: auto;
+				transform: rotate(var(--step-rotate, 0deg));
+			}
+			.how__item h4 {
+				display: block;
+				font-size: 2.25rem;
+			}
+			.how__item img {
+				width: min(14rem, 72vw);
+			}
+			.tokenomics__container {
+				flex-direction: column;
+			}
+			.tokenomics__content {
+				order: 3;
+				flex: 0 1 auto !important;
+				width: min(100%, 42rem);
+			}
+			.tokenomics__title {
+				order: 1;
+				flex: 0 1 auto !important;
+				margin-inline: auto;
+			}
+			.tokenomics__item {
+				grid-template-columns: 5.25rem 1fr;
+			}
+			.tokenomics__image {
+				order: 2;
+				flex: 0 1 auto !important;
+				width: min(78%, 26rem);
+			}
+			.join__body {
+				width: min(42rem, 96vw) !important;
+			}
+			.join__button {
+				--button-transform: translateX(-50%) rotate(-2deg);
+				left: 50%;
+				bottom: 0;
+				transform: var(--button-transform);
+			}
+			.join__social {
+				display: none;
+			}
+			.join {
+				padding-bottom: 5.75rem;
+			}
+			.footer__top {
+				padding-top: 0;
+			}
+			.footer__top-body {
+				flex-direction: column;
+			}
+			.footer__top-items {
+				justify-content: center;
+			}
+			.page__hero.hero {
+				background-position: 32% center;
+			}
+			.page__hero .hero__cta {
+				left: 50%;
+				right: auto;
+				top: 68%;
+				width: max-content;
+				flex-direction: column;
+				gap: 0.875rem;
+				-webkit-transform: translateX(-50%);
+				transform: translateX(-50%);
+			}
+			.page__hero .hero__buy {
+				font-size: clamp(1.15rem, 3.8vw, 1.5rem);
+				padding: 0.7rem 1.6rem;
+			}
+			.page__hero .hero__social-item {
+				width: 3.75rem;
+			}
+			.page__hero .hero__ca {
+				height: 3.75rem;
+				font-size: 0.82rem;
+				padding: 0 0.7em;
+			}
+		}
+	</style>
+	<link rel="icon" href="./img/favicon.png" type="image/png">
+	<link rel="shortcut icon" href="./img/favicon.png">
+	<link rel="apple-touch-icon" href="./img/apple-touch-icon.png">
+	
+<style>
+@media (min-width: 61.99875em) {
+  .menu__list { flex-wrap: nowrap; }
+  .menu__link { white-space: nowrap; padding: .625rem clamp(.65rem, 2vw, 1.7rem); font-size: clamp(1rem, 1.6vw, 1.45rem); }
+  .hero__title { position: absolute; width: 48%; max-width: 47rem; right: 3%; top: 28%; margin: 0; transform: none; }
+  .hero__right { position: static; transform: none; }
+  .hero__cta { top: auto; bottom: 5%; right: 16%; }
+}
+</style>
+</head>
+
+<body style="">
+	<div class="wrapper">
+		<div class="start"></div>
+		<div class="menu-open-bg"></div>
+		<header class="header">
+			<div class="header__container">
+				<a href="#" class="header__logo">
+					<img src="./TRENCHER_files/mainlogo-nobg.webp" alt="Trencher logo">
+					<img src="./TRENCHER_files/heroTitle.webp" alt="TRENCHER">
+				</a>
+				<div class="header__menu menu">
+					<button type="button" class="menu__icon icon-menu" aria-label="open / close menu">
+						<span></span>
+					</button>
+					<nav class="menu__body">
+						<ul class="menu__list">
+							<li class="menu__item">
+								<a href="#" class="menu__link" data-goto=".about" data-goto-top="80">About</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link" data-goto=".how">How to buy</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link" data-goto=".tokenomics">Tokenomics</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" class="menu__link" data-goto=".memes__container" data-goto-top="80">Memes</a>
+							</li>
+							<li class="menu__item">
+								<a href="#" target="_blank" rel="noopener noreferrer" class="menu__link menu__link--buy">Buy now</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+			</div>
+		</header>
+
+		<main class="page">
+			<section class="page__hero hero">
+				<div class="hero__container">
+					<h1 class="hero__title">
+						<img src="./TRENCHER_files/heroTitle.webp" alt="TRENCHER" fetchpriority="high" decoding="async">
+					</h1>
+					<div class="hero__right">
+						<div class="hero__cta">
+							<a href="#" target="_blank" rel="noopener noreferrer" class="hero__buy">
+								Buy now
+							</a>
+							<div class="hero__social">
+							<a target="_blank" rel="noopener noreferrer" href="#" class="hero__social-item">
+								<svg xmlns="http://www.w3.org/2000/svg" width="43" height="41" viewBox="0 0 43 41" fill="none">
+									<path d="M35.2629 1.69983L41.7426 2.02936L26.7643 17.4653L42.3017 40.2924L29.2614 39.6292L19.7269 25.7773L7.36079 38.5154L0.877596 38.1857L16.8991 21.6748L1.98233 0.00908228L15.3537 0.689095L23.9657 13.3449L35.2629 1.69983ZM31.2472 35.8491L34.8374 36.0317L13.2163 4.25703L9.36367 4.0611L31.2472 35.8491Z" fill="white"></path>
+								</svg>
+							</a>
+							<a target="_blank" rel="noopener noreferrer" href="#" class="hero__social-item">
+								<svg xmlns="http://www.w3.org/2000/svg" width="44" height="40" viewBox="0 0 44 40" fill="none">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M38.5018 0.984196C39.0273 0.710955 39.6161 0.584648 40.2068 0.618421C40.7976 0.652193 41.3687 0.84481 41.8608 1.17622C42.3529 1.50764 42.7479 1.96573 43.0048 2.50283C43.2617 3.03992 43.371 3.63638 43.3214 4.23012L40.7308 35.1053C40.4782 38.0838 37.4079 40.022 34.6154 38.7681C32.2796 37.719 28.8048 36.0928 25.658 34.3584C24.0845 33.4901 19.2537 30.6932 19.6401 28.4021C19.9729 26.4429 27.1043 18.618 31.1663 13.9798C32.7605 12.1577 31.8964 11.2469 29.9792 12.9585C25.2182 17.208 17.5483 23.7041 14.9898 25.5642C12.7327 27.2044 11.516 27.5498 10.0181 27.418C7.28552 27.1782 4.72918 26.6748 2.62058 25.9824C-0.228714 25.0473 -0.39512 21.2167 2.13958 19.898L38.5018 0.984196Z" fill="white"></path>
+								</svg>
+							</a>
+								<button type="button" class="ca-copy hero__ca" data-ca="" aria-label="Copy contract address">
+									<strong>CA</strong>
+									<span class="ca-copy__addr">Coming soon</span>
+									<span class="ca-copy__copied">COPIED</span>
+									<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="line">
+				<div class="line__row">
+					<div class="line__item">
+						Once a Trencher, always a Trencher — born in chaos, hardened by every rug, crash, and red candle.
+					</div>
+					<div class="line__item">
+						Once a Trencher, always a Trencher — born in chaos, hardened by every rug, crash, and red candle.
+					</div>
+					<div class="line__item">
+						Once a Trencher, always a Trencher — born in chaos, hardened by every rug, crash, and red candle.
+					</div>
+				</div>
+				<div class="line__row">
+					<div class="line__item">
+						Once a Trencher, always a Trencher — born in chaos, hardened by every rug, crash, and red candle.
+					</div>
+					<div class="line__item">
+						Once a Trencher, always a Trencher — born in chaos, hardened by every rug, crash, and red candle.
+					</div>
+					<div class="line__item">
+						Once a Trencher, always a Trencher — born in chaos, hardened by every rug, crash, and red candle.
+					</div>
+				</div>
+				<div class="line__row">
+					<div class="line__item">
+						Once a Trencher, always a Trencher — born in chaos, hardened by every rug, crash, and red candle.
+					</div>
+					<div class="line__item">
+						Once a Trencher, always a Trencher — born in chaos, hardened by every rug, crash, and red candle.
+					</div>
+					<div class="line__item">
+						Once a Trencher, always a Trencher — born in chaos, hardened by every rug, crash, and red candle.
+					</div>
+				</div>
+			</div>
+			<section class="page__about about" data-watch="navigator" data-watch-threshold="0.57">
+				<div class="about__container">
+					<div data-watch-once="" data-watch-threshold="0.4" data-watch="" class="about__img-box _watcher-view">
+						<img class="from-left" src="./TRENCHER_files/dog.webp" alt="Image" loading="lazy" decoding="async">
+						<div class="about__title fall">
+							<h2>About</h2>
+							<img src="./TRENCHER_files/title.webp" alt="Image" loading="lazy" decoding="async">
+						</div>
+						<div class="about__img-dec">
+						</div>
+					</div>
+					<div class="about__content">
+						<div data-watch-once="" data-watch-threshold="0.3" data-watch="" class="about__content-wrapper _watcher-view">
+							<div class="about__text-wrp">
+								<div class="about__decor">
+									<img src="./TRENCHER_files/mainlogo-nobg.webp" alt="Image">
+								</div>
+																<div class="about__text from-right">
+									<h3>About Trencher</h3>
+									<p>
+										Everyone's talking about nuclear war. The world is on edge, and the trenches are getting louder.
+									</p>
+									<p>
+										But one question remains: How has $TRENCHER never had its moment?
+									</p>
+									<p>
+										Born in chaos, raised on the battlefield, and hardened by every rug, every crash, and every red candle. Whether it's war in the headlines or war on the charts, a true Trencher never backs down.
+									</p>
+									<p>
+										Once a Trencher, always a Trencher.
+									</p>
+								</div>
+							</div>
+							<a data-watch-once="" data-watch-threshold="0.5" data-watch="" href="#" target="_blank" rel="noopener noreferrer" class="about__button from-right _watcher-view">
+								Buy now
+							</a>
+							<div data-watch-once="" data-watch-threshold="0.4" data-watch="" class="about__small-img _watcher-view">
+								<img class="ibg from-right" src="./TRENCHER_files/cat-small.webp" alt="Image" loading="lazy" decoding="async">
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="page__how how" data-watch="navigator" data-watch-threshold="0.87">
+				<div class="how__body">
+					<div class="how__container">
+						<h2 class="how__title _watcher-view" data-watch-threshold="0.8" data-watch-once="" data-watch="">
+							<img src="./TRENCHER_files/howTitle.webp" alt="HOW TO BUY">
+						</h2>
+						<div class="how__items">
+							<div class="how__item">
+								<img src="./TRENCHER_files/step-1.webp" alt="Connect wallet" loading="lazy" decoding="async">
+								<h4>STEP 1</h4>
+								<p>Set up an Ethereum-compatible wallet.</p>
+							</div>
+							<div class="how__item">
+								<img src="./TRENCHER_files/step-2.webp" alt="Fund wallet" loading="lazy" decoding="async">
+								<h4>STEP 2</h4>
+								<p>Fund your wallet with ETH for your purchase and network fees.</p>
+							</div>
+							<div class="how__item">
+								<img src="./TRENCHER_files/step-3.webp" alt="Buy TRENCHER" loading="lazy" decoding="async">
+								<h4>STEP 3</h4>
+								<p>Use the verified contract address to find <strong>$TRENCHER</strong> on the project’s exchange.</p>
+							</div>
+							<div class="how__item reverse">
+								<img src="./TRENCHER_files/step-4.webp" alt="Hold the line" loading="lazy" decoding="async">
+								<h4>STEP 4</h4>
+								<p>Hold <strong>$TRENCHER</strong>. A true Trencher never backs down.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="page__tokenomics tokenomics" data-watch="navigator" data-watch-threshold="0.37">
+				<div class="tokenomics__container" data-watch-threshold="0.65" data-watch-once="" data-watch="">
+					<h2 class="tokenomics__title">
+						<img src="./TRENCHER_files/title(1).webp" alt="TOKENOMICS" loading="lazy" decoding="async">
+					</h2>
+					<div class="tokenomics__content">
+						<div class="tokenomics__items">
+							<div class="tokenomics__item">
+								<img src="./TRENCHER_files/icon-supply.webp" alt="Supply icon" loading="lazy" decoding="async">
+								<div>
+									<h3>Total Supply</h3>
+									<strong data-config="totalSupply">To be announced</strong>
+									<p>Token supply details will be announced.</p>
+								</div>
+							</div>
+							<div class="tokenomics__item">
+								<img src="./TRENCHER_files/icon-tax.webp" alt="Tax icon" loading="lazy" decoding="async">
+								<div>
+									<h3>Buy / Sell Tax</h3>
+									<strong data-config="buySellTax">To be announced</strong>
+									<p>Buy and sell tax details will be announced.</p>
+								</div>
+							</div>
+							<div class="tokenomics__item">
+								<img src="./TRENCHER_files/icon-rewards.webp" alt="Rewards icon" loading="lazy" decoding="async">
+								<div>
+									<h3>Creator Rewards</h3>
+									<strong data-config="rewards">To be announced</strong>
+									<p>Reward details will be announced.</p>
+								</div>
+							</div>
+						</div>
+						<div class="tokenomics__ca">
+							<span>CA:</span>
+							<span>Coming soon</span>
+							<button type="button" class="copy-ca-btn" data-ca="">
+								<svg xmlns="http://www.w3.org/2000/svg" width="45" height="51" viewBox="0 0 45 51" fill="none">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M39.8508 0.588576L6.70509 3.6088L7.39348 11.1636L0.849522 11.7599L4.35949 50.2804L36.7344 47.3304L36.1836 41.2862L43.4984 40.6197L39.8508 0.588576ZM35.8051 37.1321L38.8803 36.8518L35.9898 5.12906L11.3232 7.37666L11.633 10.7773L33.2244 8.80989L35.8051 37.1321ZM8.22053 45.7399L5.46762 15.5277L29.3634 13.3504L32.1163 43.5626L8.22053 45.7399Z" fill="white"></path>
+								</svg>
+							</button>
+						</div>
+					</div>
+					<div class="tokenomics__image">
+						<img src="./TRENCHER_files/main.webp" alt="Trencher tokenomics reward machine" loading="lazy" decoding="async">
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+						<span></span>
+					</div>
+				</div>
+			</section>
+			<section class="page__memes memes" aria-labelledby="memes-title" data-watch="navigator" data-watch-threshold="0.32">
+				<div class="memes__container">
+					<div class="memes__head">
+						<h2 class="memes__title" id="memes-title">the memes</h2>
+						<p class="memes__lead">once a trencher, always a trencher.</p>
+					</div>
+					<div class="memes__wall">
+						<button type="button" class="memes__card">
+							<img src="./TRENCHER_files/01-meme.webp" alt="Trencher Doge crawling through a muddy trench" width="800" height="450" loading="lazy" decoding="async">
+						</button>
+						<button type="button" class="memes__card">
+							<img src="./TRENCHER_files/02-meme.webp" alt="Trencher Doge in a tank that says SEND IT" width="800" height="450" loading="lazy" decoding="async">
+						</button>
+						<button type="button" class="memes__card">
+							<img src="./TRENCHER_files/03-meme.webp" alt="Trencher Doge watching blue candles on a rugged laptop" width="800" height="450" loading="lazy" decoding="async">
+						</button>
+						<button type="button" class="memes__card">
+							<img src="./TRENCHER_files/04-meme.webp" alt="Trencher Doge in a trench under falling red candles" width="800" height="800" loading="lazy" decoding="async">
+						</button>
+						<button type="button" class="memes__card">
+							<img src="./TRENCHER_files/05-meme.webp" alt="Trencher Doge roaring in the trenches" width="800" height="800" loading="lazy" decoding="async">
+						</button>
+						<button type="button" class="memes__card">
+							<img src="./TRENCHER_files/06-meme.webp" alt="Trencher Doge sniper aiming at blue candle mountain" width="800" height="450" loading="lazy" decoding="async">
+						</button>
+						<button type="button" class="memes__card">
+							<img src="./TRENCHER_files/07-meme.webp" alt="Trencher Doge checking a pump chart on a phone" width="800" height="450" loading="lazy" decoding="async">
+						</button>
+						<button type="button" class="memes__card">
+							<img src="./TRENCHER_files/08-meme.webp" alt="Trencher Doge saluting on the battlefield" width="800" height="800" loading="lazy" decoding="async">
+						</button>
+						<button type="button" class="memes__card">
+							<img src="./TRENCHER_files/09-meme.webp" alt="Trencher Doge thousand-yard stare in ruined city" width="800" height="800" loading="lazy" decoding="async">
+						</button>
+						<button type="button" class="memes__card">
+							<img src="./TRENCHER_files/10-meme.webp" alt="Trencher Doge thumbs up with $TRENCHER parachutes" width="800" height="450" loading="lazy" decoding="async">
+						</button>
+						<button type="button" class="memes__card">
+							<img src="./TRENCHER_files/11-meme.webp" alt="Trencher Doge with red candle dynamite necklace" width="800" height="800" loading="lazy" decoding="async">
+						</button>
+						<button type="button" class="memes__card">
+							<img src="./TRENCHER_files/12-meme.webp" alt="Trencher Doge facing a mushroom cloud" width="800" height="800" loading="lazy" decoding="async">
+						</button>
+						<button type="button" class="memes__card">
+							<img src="./TRENCHER_files/13-meme.webp" alt="Not a Trencher — paper hands running with SOLD bag" width="800" height="450" loading="lazy" decoding="async">
+						</button>
+						<button type="button" class="memes__card">
+							<img src="./TRENCHER_files/14-meme.webp" alt="Trencher Doge briefing the path to the moon" width="800" height="450" loading="lazy" decoding="async">
+						</button>
+						<button type="button" class="memes__card">
+							<img src="./TRENCHER_files/15-meme.webp" alt="Trencher gold medal ceremony" width="800" height="450" loading="lazy" decoding="async">
+						</button>
+						<button type="button" class="memes__card">
+							<img src="./TRENCHER_files/16-meme.webp" alt="Trencher diamond hands in the trench" width="800" height="450" loading="lazy" decoding="async">
+						</button>
+						<button type="button" class="memes__card">
+							<img src="./TRENCHER_files/17-meme.webp" alt="Dear Mom, still holding" width="800" height="450" loading="lazy" decoding="async">
+						</button>
+						<button type="button" class="memes__card">
+							<img src="./TRENCHER_files/18-meme.webp" alt="Trencher Doge thumbs up with parachutes" width="800" height="450" loading="lazy" decoding="async">
+						</button>
+						<button type="button" class="memes__card">
+							<img src="./TRENCHER_files/19-meme.webp" alt="Trencher Doge with a roaring bear behind him" width="800" height="450" loading="lazy" decoding="async">
+						</button>
+						<button type="button" class="memes__card">
+							<img src="./TRENCHER_files/20-meme.webp" alt="Trencher battlefield selfie with blue chart" width="800" height="450" loading="lazy" decoding="async">
+						</button>
+					</div>
+				</div>
+			</section>
+			<section class="page__join join">
+				<div class="join__container">
+					<div class="join__body">
+						<img src="./TRENCHER_files/join.webp" alt="Image" loading="lazy" decoding="async">
+						<a href="#" target="_blank" rel="noopener noreferrer" class="join__button">
+							Buy now
+						</a>
+						<div class="join__social">
+							<a target="_blank" rel="noopener noreferrer" href="#" class="join__social-item">
+								<svg xmlns="http://www.w3.org/2000/svg" width="42" height="40" viewBox="0 0 42 40" fill="none">
+									<path d="M33.4992 1.45073L39.9858 1.58345L25.4829 17.4668L41.706 39.8119L28.6515 39.5447L18.701 25.9886L6.7272 39.0962L0.236988 38.9634L15.7501 21.9738L0.182581 0.770803L13.5684 1.04469L22.5606 13.4333L33.4992 1.45073ZM30.5217 35.7061L34.1158 35.7797L11.5403 4.67585L7.68349 4.59694L30.5217 35.7061Z" fill="white"></path>
+								</svg>
+							</a>
+							<a target="_blank" rel="noopener noreferrer" href="#" class="join__social-item">
+								<svg xmlns="http://www.w3.org/2000/svg" width="43" height="39" viewBox="0 0 43 39" fill="none">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M37.638 0.633568C38.1549 0.344506 38.7396 0.200388 39.3311 0.216216C39.9226 0.232043 40.4993 0.407239 41.0013 0.723565C41.5032 1.03989 41.912 1.48578 42.185 2.01484C42.4581 2.54389 42.5855 3.13675 42.5539 3.73173L40.9015 34.6713C40.7395 37.6561 37.7294 39.6866 34.9001 38.518C32.5335 37.5403 29.011 36.0203 25.813 34.3822C24.2139 33.5621 19.3004 30.9131 19.6171 28.6113C19.8903 26.6429 26.7809 18.6052 30.7003 13.8458C32.2385 11.9762 31.3471 11.092 29.4827 12.861C24.8529 17.253 17.3837 23.979 14.8828 25.9158C12.6766 27.6237 11.4708 28.006 9.96967 27.9197C7.23106 27.7629 4.66062 27.3374 2.53197 26.7092C-0.344386 25.861 -0.626972 22.0372 1.86654 20.6422L37.638 0.633568Z" fill="white"></path>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer">
+			<div class="footer__top">
+				<div class="footer__container">
+					<div class="footer__top-body">
+						<div class="footer__top-items">
+							<a href="#" class="footer__top-item-menu" data-goto=".about" data-goto-top="80">About</a>
+							<a href="#" class="footer__top-item-menu" data-goto=".how">How to buy</a>
+							<a href="#" class="footer__top-item-menu" data-goto=".tokenomics">Tokenomics</a>
+							<a href="#" class="footer__top-item-menu" data-goto=".memes__container" data-goto-top="80">Memes</a>
+							<a target="_blank" rel="noopener noreferrer" href="#" class="footer__top-item-social"><svg xmlns="http://www.w3.org/2000/svg" width="34" height="31" viewBox="0 0 34 31" fill="none">
+									<path d="M26.7672 0.383789L31.904 0.383789L20.6812 13.1915L33.8848 30.6164L23.5469 30.6164L15.4509 20.0469L6.18504 30.6164L1.04543 30.6164L13.0499 16.9167L0.383789 0.385183L10.9841 0.385183L18.3026 10.046L26.7672 0.383789ZM24.9651 27.5475L27.8113 27.5475L9.43743 3.29235L6.38325 3.29235L24.9651 27.5475Z" fill="white"></path>
+								</svg>
+							</a>
+							<a target="_blank" rel="noopener noreferrer" href="#" class="footer__top-item-social"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="31" viewBox="0 0 36 31" fill="none">
+									<path fill-rule="evenodd" clip-rule="evenodd" d="M31.7907 0.59062C32.2227 0.407482 32.6955 0.344319 33.16 0.407705C33.6244 0.47109 34.0635 0.658706 34.4316 0.951026C34.7996 1.24335 35.0831 1.62968 35.2526 2.06982C35.4221 2.50996 35.4714 2.98782 35.3953 3.45365L31.4306 27.6767C31.046 30.0133 28.5007 31.3533 26.3732 30.1894C24.5937 29.2157 21.9505 27.7155 19.573 26.1501C18.3843 25.3666 14.743 22.8575 15.1905 21.072C15.5751 19.5454 21.6935 13.8088 25.1898 10.3982C26.562 9.05822 25.9362 8.28524 24.3157 9.51779C20.2915 12.578 13.8305 17.2318 11.6942 18.5418C9.80977 19.6969 8.82732 19.8941 7.65258 19.6969C5.50938 19.3377 3.52176 18.7813 1.8995 18.1034C-0.292644 17.1878 -0.186008 14.1522 1.89776 13.2683L31.7907 0.59062Z" fill="white"></path>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer__bottom">
+				<div class="footer__container">
+					<div class="footer__bottom-body">
+						<span>2026 © ALL RIGHTS RESERVED — TO BE CONTINUED</span>
+						
+					</div>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+	<div class="memes-lightbox" hidden="">
+		<button type="button" class="memes-lightbox__close" aria-label="Close">
+			<svg viewBox="0 0 24 24" aria-hidden="true">
+				<path d="M6 6 L18 18 M18 6 L6 18" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"></path>
+			</svg>
+		</button>
+		<img alt="">
+	</div>
+	<script src="./TRENCHER_files/site-config.js"></script>
+	<script src="./TRENCHER_files/site.js"></script>
+	<script src="./TRENCHER_files/app.min.js"></script>
+
+	<script>
+		document.querySelectorAll("[data-ca]").forEach(function (btn) {
+			btn.addEventListener("click", function () {
+				var ca = btn.getAttribute("data-ca");
+				if (!ca) return;
+				var done = function () {
+					btn.classList.add("is-copied");
+					setTimeout(function () { btn.classList.remove("is-copied"); }, 1600);
+				};
+				if (navigator.clipboard && navigator.clipboard.writeText) {
+					navigator.clipboard.writeText(ca).then(done).catch(function () {
+						window.prompt("Copy CA", ca);
+						done();
+					});
+				} else {
+					window.prompt("Copy CA", ca);
+					done();
+				}
+			});
+		});
+	</script>
+	<script>
+		(function () {
+			const lightbox = document.querySelector(".memes-lightbox");
+			if (!lightbox) return;
+			const view = lightbox.querySelector("img");
+			const closeBtn = lightbox.querySelector(".memes-lightbox__close");
+			let lastCard = null;
+
+			const lockScroll = (locked) => {
+				document.body.style.overflow = locked ? "hidden" : "";
+				if (!window.lenis) return;
+				if (locked && typeof window.lenis.stop === "function") window.lenis.stop();
+				if (!locked && typeof window.lenis.start === "function") window.lenis.start();
+			};
+
+			const open = (card) => {
+				const pic = card.querySelector("img");
+				view.src = pic.currentSrc || pic.src;
+				view.alt = pic.alt || "";
+				lastCard = card;
+				lightbox.hidden = false;
+				lockScroll(true);
+				closeBtn.focus();
+			};
+
+			const close = () => {
+				if (lightbox.hidden) return;
+				lightbox.hidden = true;
+				view.removeAttribute("src");
+				view.alt = "";
+				lockScroll(false);
+				if (lastCard) lastCard.focus();
+			};
+
+			document.querySelectorAll(".memes__card").forEach((card) => {
+				card.addEventListener("click", () => open(card));
+			});
+			closeBtn.addEventListener("click", close);
+			lightbox.addEventListener("click", (event) => {
+				if (event.target === lightbox) close();
+			});
+			document.addEventListener("keydown", (event) => {
+				if (event.key === "Escape") close();
+			});
+		})();
+	</script>
+
+
+
+</body></html>
